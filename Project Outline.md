@@ -27,3 +27,18 @@
 -   create template for the home page (index.html)
 -   import render_template function to render pages
 -   include directive to include external files
+******************************************************************
+# 1.3 
+
+-       create navigation menus for application
+-       use url_for
+-       use the route() decorator to bind a function to one or more URL patterns
+-       use Jinja delimiters {{% %}}, {{  }}, {{#  #}}
+-       Jinja   if statement
+********************************************************************
+# 1.4  
+
+-       create base templates in JinJa
+-       use inheritance to creat child templates
+-       pass data using props
+-       access data using request and response
