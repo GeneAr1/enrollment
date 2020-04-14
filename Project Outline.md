@@ -36,3 +36,9 @@
 -       use Jinja delimiters {{% %}}, {{  }}, {{#  #}}
 -       Jinja   if statement
 ********************************************************************
+# 1.4  
+
+-       create base templates in JinJa
+-       use inheritance to creat child templates
+-       pass data using props
+-       access data using request and response
