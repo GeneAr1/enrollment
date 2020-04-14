@@ -1,0 +1,1 @@
+from application import app    #import app from init.py
