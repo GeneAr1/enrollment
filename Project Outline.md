@@ -63,3 +63,6 @@
 -       update enrollment using POST method (secure)
 -       add GET and POST methonds to Route
 -       access form data using form object
+# 1.5
+-       Response Object
+-       Create API to send JSON response
