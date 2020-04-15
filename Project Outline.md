@@ -84,3 +84,8 @@
 -       Initalize the database object
 @               db = MongoEnging()
                 db.init_app(app)
+# 2.1
+-       Connect to MongoDB using MongoEngine OBJ
+-       hooking up a user colletcion using simple user model
+-       insert data into collection
+-       display collection to the view
