@@ -127,6 +127,10 @@
         Create the form classes and update templates using WTFforms library
         Creat alerts using flash() method
         validate forms and show error messages via form
+# 3.02
+-       Update Login Route and Login Template
+                *update login route to capture data
+                *update login template using WTForms lib
 
 
 

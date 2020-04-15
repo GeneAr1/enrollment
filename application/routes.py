@@ -1,6 +1,7 @@
 from application import app, db
 from flask import render_template, request, json, Response
 from application.models import User, Course, Enrollment
+from application.forms import Loginform, RegisterForm
 
 
 
@@ -14,9 +15,10 @@ courseData = [{"courseID":"1111","title":"PHP 101","description":"Intro to PHP",
 def index():
     return render_template("index.html", index = True)
 
-@app.route('/login')
+@app.route('/login', methods=['GET','POST'])
 def login():
-    return render_template("login.html", login = True)
+    form = Loginform()
+    return render_template("login.html", title="Login", form=form, login = True)
 
 @app.route('/courses/')      #added second forward slash to pattern v1.49a
 @app.route('/courses/<term>')
