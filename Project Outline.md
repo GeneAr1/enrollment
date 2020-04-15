@@ -42,3 +42,20 @@
 -       use inheritance to creat child templates
 -       pass data using props
 -       access data using request and response
+# 1.40a
+-       Url variables
+-       HTTP methots (Get POST) for moving data
+-       global objects:  REQUEST and RESPONSE 
+-       Request and response JSON API format
+
+-               Accessng Query String (GET)
+@               request.args.get(<field_name>)
+@               request.args[<field_name>]
+-               Accessomg Query String (POST)
+@               request.form.get(<field_name>)
+@               request.form[<field_name>]
+
+-       class flask.Response( see documentation )
+-       creat enrollment form using GET
+@               create the template
+@               create the enrollment route (URL Pattern)
