@@ -18,15 +18,15 @@
 *****************************************************************
 # 1.1
 
--   create the config.py module
--   create a routes.py module for all routing patterns
--   modify the __init__.py 
+-       create the config.py module
+-       create a routes.py module for all routing patterns
+-       modify the __init__.py 
 *****************************************************************
 # 1.2
 
--   create template for the home page (index.html)
--   import render_template function to render pages
--   include directive to include external files
+-       create template for the home page (index.html)
+-       import render_template function to render pages
+-       include directive to include external files
 ******************************************************************
 # 1.3 
 
@@ -49,16 +49,16 @@
 -       Request and response JSON API format
 
 -               Accessng Query String (GET)
-@               request.args.get(<field_name>)
-@               request.args[<field_name>]
+                *request.args.get(<field_name>)
+                *request.args[<field_name>]
 -               Accessomg Query String (POST)
-@               request.form.get(<field_name>)
-@               request.form[<field_name>]
+                *request.form.get(<field_name>)
+                *request.form[<field_name>]
 
 -       class flask.Response( see documentation )
 -       creat enrollment form using GET
-@               create the template
-@               create the enrollment route (URL Pattern)
+                *create the template
+                *create the enrollment route (URL Pattern)
 # 1.40b
 -       update enrollment using POST method (secure)
 -       add GET and POST methonds to Route
@@ -74,18 +74,32 @@
 -       Install MongoEngine extension for Flask
 -       Set up the Databas
 -       Connect to Database
-@               create documents and data
-@               create the DataBase Model (Schema)
+                *create documents and data
+                *create the DataBase Model (Schema)
 # 2.01
 -       Set up MongoDB database
-@               MONGODB_SETTINGS = { 'db' : 'UTA_Enrollment' }
+                *MONGODB_SETTINGS = { 'db' : 'UTA_Enrollment' }
 -       Import the Mongo Engin
-@               From flask_mongoengine import MongoEngine
+                *From flask_mongoengine import MongoEngine
 -       Initalize the database object
-@               db = MongoEnging()
-                db.init_app(app)
+                *db = MongoEnging()
+                *db.init_app(app)
 # 2.1
 -       Connect to MongoDB using MongoEngine OBJ
 -       hooking up a user colletcion using simple user model
 -       insert data into collection
 -       display collection to the view
+# 2.2
+-       create collections to store documents(data)
+-       insert documents into collections
+-       use MongoDB shell commands
+                *see mongo documentation shell quick reference
+-       
+        Insert JSON data usine mongoimport.exe via command line
+# 2.4
+-       create the data models module
+                * create User model
+                * create Course model
+                * create Enrollment model
+
+
