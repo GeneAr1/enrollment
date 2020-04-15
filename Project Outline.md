@@ -122,6 +122,11 @@
                 * User registration
                 * Login tracking (Flask-Login)
                 * Supports data persistency for Flask-SQLAlchemy, Flask-MongoEngine, flask-peewee and PonyORM
+# 3.01
+-       Create login and registration page
+        Create the form classes and update templates using WTFforms library
+        Creat alerts using flash() method
+        validate forms and show error messages via form
 
 
 
