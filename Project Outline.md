@@ -59,3 +59,7 @@
 -       creat enrollment form using GET
 @               create the template
 @               create the enrollment route (URL Pattern)
+# 1.40b
+-       update enrollment using POST method (secure)
+-       add GET and POST methonds to Route
+-       access form data using form object

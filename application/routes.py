@@ -23,10 +23,11 @@ def register():
     return render_template("register.html", register = True)
 
 
-    # Added data request and enrollment link V1.40a
-@app.route('/enrollment')
+    # Added data request and enrollment link V1.40a added GET, POST methods in 1.40b also need to change
+    # to form from args so POST will recieve data
+@app.route('/enrollment', methods=["GET", "POST"])
 def enrollment():
-    course = request.args.get('courseID')
-    title = request.args.get('title')
-    term = request.args.get('term')
+    course = request.form.get('courseID')
+    title = request.form.get('title')
+    term = request.form.get('term')
     return render_template("enrollment.html", enrollment = True, data={"id":course, "title":title, "term":term})

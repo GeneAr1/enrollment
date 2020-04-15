@@ -31,8 +31,8 @@
                 <td>{{ data["credits"] }}</td>
                 <td>{{ data["term"] }}</td>
                 <td>
-                    <!-- transfer data into module using GET method 1.40a -->
-                    <form action="{{url_for('enrollment')}}" method="GET">
+                    <!-- transfer data into module using GET method 1.40a changed to POST 1.40b -->
+                    <form action="{{url_for('enrollment')}}" method="POST">
                         <input type="hidden" name="courseID" value="{{data['courseID']}}">
                         <input type="hidden" name="title" value="{{data['title']}}">
                         <input type="hidden" name="term" value="{{data['term']}}">
