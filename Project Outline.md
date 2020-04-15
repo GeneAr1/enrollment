@@ -76,4 +76,11 @@
 -       Connect to Database
 @               create documents and data
 @               create the DataBase Model (Schema)
-
+# 2.01
+-       Set up MongoDB database
+@               MONGODB_SETTINGS = { 'db' : 'UTA_Enrollment' }
+-       Import the Mongo Engin
+@               From flask_mongoengine import MongoEngine
+-       Initalize the database object
+@               db = MongoEnging()
+                db.init_app(app)
