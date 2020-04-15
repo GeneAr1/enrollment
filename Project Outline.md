@@ -66,3 +66,14 @@
 # 1.5
 -       Response Object
 -       Create API to send JSON response
+
+************************************************************************
+# 2.0   DataBase Addition
+
+-       install the MondoDB database for use in this application
+-       Install MongoEngine extension for Flask
+-       Set up the Databas
+-       Connect to Database
+@               create documents and data
+@               create the DataBase Model (Schema)
+
