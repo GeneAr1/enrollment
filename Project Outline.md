@@ -102,4 +102,27 @@
                 * create Course model
                 * create Enrollment model
 
+****************************************************************************
+# 3.0   Web Forms And Flask Security Issues
+
+-       Instal and configure Flask-WTF and Flask-Security extensions
+        Creating the login and registration pages
+        Processing the form data and updating the database
+        creating the courese enrollment pages
+        creating sessions and authentication for users
+# 3.00
+-       Flask-WTF extention for WTForms library
+                * WTForms provides clean way to gnerate HTML form fields
+                * Maintains a seperaton of code and presentation
+
+        Flask Security Extension provies security and authentication features
+                * Session-based authentication
+                * Password hashing
+                * Bassic HTTP and token-based authentication
+                * User registration
+                * Login tracking (Flask-Login)
+                * Supports data persistency for Flask-SQLAlchemy, Flask-MongoEngine, flask-peewee and PonyORM
+
+
+
 
