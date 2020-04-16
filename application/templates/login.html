@@ -3,6 +3,8 @@
     
 {% block content %}
 
+<!-- Updated with V3.03 to work with WTF forms  -->
+
     <h1>{{title}}</h1>    
 
     <div class="row">
@@ -35,15 +37,6 @@
                     {{ form.submit() }} 
                 </p>
 
-<!-- 
-
-                <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required>
-                <br>
-                <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required>
-                <br class="clear">
-                <input class="btn-submit" type="submit" name="submit" value="Login"> -->
             </form>
         </div>
     </div>

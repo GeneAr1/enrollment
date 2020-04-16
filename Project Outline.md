@@ -139,7 +139,10 @@
         Style and format error message
                 (need to go back and redo registration form to match login using WTF forms)
 # 3.04a 
--       Update registration form to match model
+-       Update registration form to match model 
+        minor bug fix and field name changes
+# 3.04b 
+-       update registration form to work with WTF Forms
 
 
 

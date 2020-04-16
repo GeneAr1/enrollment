@@ -3,38 +3,70 @@
     
 {% block content %}
 
-    <h2>New User Registration</h2>
+    <!-- <h2>New User Registration</h2> -->
+    <!-- updated with V3.04 to work wiht WTF form  -->
+    <h2>{{ title }}</h2>
 
     <div class="container">
-        <form name="register" action="register.php" method="get">
+        <form name="register" action="" method="post" novalidate>
 
+            {{ rform.hidden_tag() }}
 
-            <br>
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <p>
+                {{ rform.email.label}} <br>
+                {{ rform.email(size=35) }}
+                {% for error in rform.email.errors %}
 
+                    <span class="error-message">{{ error }}</span>
 
-            <br>
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
+                {% endfor %}
+            </p>
 
-            <br>
-            <label for="password-confirm"><b>Confirm  Password</b></label>
-            <input type="password" placeholder="Re-enter Password" name="password-confirm" required>
+            <p>
+                {{ rform.password.label }} <br>
+                {{ rform.password(size=35) }}
+                {% for error in rform.password.errors %}
 
-            <br>
-            <label for="first_name"><b>First Name</b></label>
-            <input type="text" placeholder="Enter First Name" name="first_name" required>
+                    <span class="error-message">{{ error }}</span>
 
-            <br>
-            <label for="last_name"><b>Last Name</b></label>
-            <input type="text" placeholder="Enter Last Name" name="last_name" required>
+                {% endfor %}
+            </p>
 
+            <p>
+                {{ rform.password_confirm.label }} <br>
+                {{ rform.password_confirm(size=35) }}
+                {% for error in rform.password_confirm.errors %}
 
-            <br class="clear">
-            <input class="btn-submit" type="submit" name="submit" value="Register Now">
+                    <span class="error-message">{{ error }}</span>
+
+                {% endfor %}
+            </p>
+
+            <p>
+                {{ rform.first_name.label }} <br>
+                {{ rform.first_name(size=35) }}
+                {% for error in rform.first_name.errors %}
+
+                    <span class="error-message">{{ error }}</span>
+
+                {% endfor %}
+            </p>
+
+            <p>
+                {{ rform.last_name.label}} <br>
+                {{ rform.last_name(size=35) }}
+                {% for error in rform.last_name.errors %}
+
+                    <span class="error-message">{{ error }}</span>
+
+                {% endfor %}
+            </p>
+
+            <p>
+                {{ rform.submit() }} 
+            </p>
+
         </form>
-
 
     </div>
 

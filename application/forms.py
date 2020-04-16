@@ -12,7 +12,7 @@ class Loginform(FlaskForm):
 class RegisterForm(FlaskForm):
     email       =   StringField("Email", validators=[DataRequired()])
     password    =   StringField("Password", validators=[DataRequired()])
-    password_confirm    =   StringField("Password", validators=[DataRequired()])
+    password_confirm    =   StringField("Password Confirm", validators=[DataRequired()])
     first_name    =   StringField("First Name", validators=[DataRequired()])
     last_name    =   StringField("Last Name", validators=[DataRequired()])
     submit      =   SubmitField("Register Now")
