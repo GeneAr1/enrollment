@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationError
-from application import User
+from application.models import User
 
 
 class Loginform(FlaskForm):
@@ -18,7 +18,7 @@ class RegisterForm(FlaskForm):
     first_name    =   StringField("First Name", validators=[DataRequired(), Length(min=2,max=50)])
     last_name    =   StringField("Last Name", validators=[DataRequired(), Length(min=2, max=50)])
     submit      =   SubmitField("Register Now")
-    
+
 
 #email validation module
     def validate_email(self,email):
