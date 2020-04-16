@@ -133,6 +133,11 @@
 # 3.03  
 -       Create Alert messages lusing flash() method (source)
         Retrieve flash messages using get_flashed_messages()  (view)
+# 3.04  
+-       Validate form data
+        Show error messages inline for form fields (using form error)
+        Style and format error messages
+
 
 
 
