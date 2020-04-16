@@ -133,6 +133,14 @@
 # 3.03  
 -       Create Alert messages lusing flash() method (source)
         Retrieve flash messages using get_flashed_messages()  (view)
+# 3.04  
+-       Validate form data login form
+        Show error messages inline for form fields (using form error)
+        Style and format error message
+                (need to go back and redo registration form to match login using WTF forms)
+# 3.04a 
+-       Update registration form to match model
+
 
 
 

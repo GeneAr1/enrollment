@@ -21,10 +21,10 @@ def login():
 
     if form.validate_on_submit():
         if request.form.get("email") == "test@uta.com":
-            flash('You have successfully logged in!')
+            flash(u'You have successfully logged in!', 'success')
             return redirect('/index')
         else:
-            flash('Sorry, there seems to be a problem')
+            flash(u'Sorry, there seems to be a problem', 'danger')
 
     return render_template("login.html", title="Login", form=form, login = True)
 
