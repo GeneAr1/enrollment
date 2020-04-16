@@ -139,7 +139,22 @@
         Style and format error message
                 (need to go back and redo registration form to match login using WTF forms)
 # 3.04a 
--       Update registration form to match model
+-       Update registration form to match model 
+        minor bug fix and field name changes
+# 3.04b 
+-       update registration form to work with WTF Forms
+# 3.10
+        Form data Validation
+        Processing form data for data base
+        Hashing passwords using Werkzeug library
+                *Hashing:
+                        generate_password_hash('pw")
+                *Unhashing:
+                        check_password_hash(password, 'pw')
+        add Werkzeug to project
+        add new module to models.py to check and hash passwords\
+        add new module to forms.py to validate emails in register class
+        corrected imports on forms and model pages
 
 
 

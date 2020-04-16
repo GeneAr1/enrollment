@@ -33,9 +33,22 @@ def login():
 def courses(term="Fall 2019"):
     return render_template("courses.html", courseData = courseData, courses = True, term = term)
 
-@app.route('/register')
+""" @app.route('/register')
 def register():
-    return render_template("register.html", register = True)
+    return render_template("register.html", register = True) """
+
+
+@app.route('/register', methods=['GET','POST'])
+def register():
+    rform = RegisterForm()
+
+    if rform.validate_on_submit():
+        pass
+    else:
+        pass
+
+    return render_template("register.html", title="New User Registration", rform = rform, register = True)
+
 
 
     # Added data request and enrollment link V1.40a added GET, POST methods in 1.40b also need to change

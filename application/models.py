@@ -3,14 +3,23 @@
 
 import flask
 from application import db
+from werkzeug.security import generate_password_hash, check_password_hash
 
 #  User Class for Data Base ver 2.01 moved from app.py in 2.4
 class User(db.Document):
     user_id     =   db.IntField( unique=True )
     first_name  =   db.StringField( max_length=50 )
     last_name   =   db.StringField( max_length=50 )
-    email       =   db.StringField( max_length=30 )
-    password    =   db.StringField( max_length=30 )
+    email       =   db.StringField( max_length=30, unique=True )
+    password    =   db.StringField()
+
+# Setter for class User
+    def set_password(self, password):
+        self.password = generate_password_hash(password)
+
+#Getter for class User
+    def get_password(self, password):
+        return check_password_hash(self.password, password)
 
 class Course(db.Document):
     course_id   =   db.StringField(max_length=10, unique=True)

@@ -3,39 +3,74 @@
     
 {% block content %}
 
-    <h2>New User Registration</h2>
+    <!-- <h2>New User Registration</h2> -->
+    <!-- updated with V3.04 to work wiht WTF form  -->
+    <!-- <h2>{{ title }}</h2> -->
 
     <div class="container">
-        <form name="register" action="register.php" method="get">
+        <form name="register" action="" method="post" novalidate>
 
+            <fieldset class="form-group">
+                <legend>{{title}}</legend>
 
-            <br>
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+                {{ rform.hidden_tag() }}
 
+                <p>
+                    {{ rform.email.label}} <br>
+                    {{ rform.email }}
+                    {% for error in rform.email.errors %}
 
-            <br>
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
+                    <span class="error-message">{{ error }}</span>
 
-            <br>
-            <label for="password-confirm"><b>Confirm  Password</b></label>
-            <input type="password" placeholder="Re-enter Password" name="password-confirm" required>
+                    {% endfor %}
+                </p>
 
-            <br>
-            <label for="first_name"><b>First Name</b></label>
-            <input type="text" placeholder="Enter First Name" name="first_name" required>
+                <p>
+                    {{ rform.password.label }} <br>
+                    {{ rform.password }}
+                    {% for error in rform.password.errors %}
 
-            <br>
-            <label for="last_name"><b>Last Name</b></label>
-            <input type="text" placeholder="Enter Last Name" name="last_name" required>
+                    <span class="error-message">{{ error }}</span>
 
+                    {% endfor %}
+                </p>
 
-            <br class="clear">
-            <input class="btn-submit" type="submit" name="submit" value="Register Now">
+                <p>
+                    {{ rform.password_confirm.label }} <br>
+                    {{ rform.password_confirm }}
+                    {% for error in rform.password_confirm.errors %}
+
+                    <span class="error-message">{{ error }}</span>
+
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ rform.first_name.label }} <br>
+                    {{ rform.first_name }}
+                    {% for error in rform.first_name.errors %}
+
+                    <span class="error-message">{{ error }}</span>
+
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ rform.last_name.label}} <br>
+                    {{ rform.last_name }}
+                    {% for error in rform.last_name.errors %}
+
+                    <span class="error-message">{{ error }}</span>
+
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ rform.submit() }}
+                </p>
+
+            </fieldset>
         </form>
-
-
     </div>
 
 {% endblock %}
