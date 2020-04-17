@@ -158,6 +158,11 @@
 # 3.20
         Update login route to interact with database
         Validate Email Address in User
+# 3.21
+        Update Registration route to interact with database
+                * form validation
+                * insert data into DB
+                * verify inserted data using MongoDB Compass 
         
 
 
