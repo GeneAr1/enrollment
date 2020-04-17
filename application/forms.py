@@ -6,18 +6,18 @@ from application.models import User
 
 class Loginform(FlaskForm):
     email       =   StringField("Email", validators=[DataRequired(), Email()])
-    password    =   StringField("Password", validators=[DataRequired(), Length(min=6,max=20)])
+    password    =   PasswordField("Password", validators=[DataRequired(), Length(min=6,max=20)])
     remember_me =   BooleanField("Remember Me")
     submit      =   SubmitField("Login")
 
 
 class RegisterForm(FlaskForm):
-    email       =   StringField("Email", validators=[DataRequired(), Email()])
-    password    =   StringField("Password", validators=[DataRequired(), Length(min=6,max=20)])
-    password_confirm    =   StringField("Password Confirm", validators=[DataRequired(), Length(min=6,max=20), EqualTo('password')])
-    first_name    =   StringField("First Name", validators=[DataRequired(), Length(min=2,max=50)])
-    last_name    =   StringField("Last Name", validators=[DataRequired(), Length(min=2, max=50)])
-    submit      =   SubmitField("Register Now")
+    email               =   StringField("Email", validators=[DataRequired(), Email()])
+    password            =   PasswordField("Password", validators=[DataRequired(), Length(min=6,max=20)])
+    password_confirm    =   PasswordField("Password Confirm", validators=[DataRequired(), Length(min=6,max=20), EqualTo('password')])
+    first_name          =   StringField("First Name", validators=[DataRequired(), Length(min=2,max=50)])
+    last_name           =   StringField("Last Name", validators=[DataRequired(), Length(min=2, max=50)])
+    submit              =   SubmitField("Register Now")
 
 
 #email validation module

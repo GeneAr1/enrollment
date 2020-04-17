@@ -157,6 +157,8 @@
         corrected imports on forms and model pages
 # 3.20
 -       Update login route to interact with database
+        Validate Email Address in User
+        
 
 
 

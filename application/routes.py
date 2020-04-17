@@ -20,11 +20,17 @@ def login():
     form = Loginform()
 
     if form.validate_on_submit():
-        if request.form.get("email") == "test@uta.com":
-            flash(u'You have successfully logged in!', 'success')
+        email       = form.email.data
+        password    = form.password.data
+
+        user = User.objects(email=email).first()
+
+        # if user and password == user.get_password(password):    iell not work because of hashed use for later
+        if user and password == user.password:
+            flash(f"{user.first_name}, You have successfully logged in!", "success")
             return redirect('/index')
         else:
-            flash(u'Sorry, there seems to be a problem', 'danger')
+            flash(f'Sorry, there seems to be a problem', 'danger')
 
     return render_template("login.html", title="Login", form=form, login = True)
 
