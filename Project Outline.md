@@ -163,6 +163,10 @@
                 * form validation
                 * insert data into DB
                 * verify inserted data using MongoDB Compass 
+# 3.30  
+        Create the courses page
+                * change to pull data from model not dict in module
+                * corrected model index in models.py to match DB
         
 
 

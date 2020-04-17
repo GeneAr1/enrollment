@@ -5,7 +5,7 @@ from application.forms import Loginform, RegisterForm
 
 
 
-courseData = [{"courseID":"1111","title":"PHP 101","description":"Intro to PHP","credits":3,"term":"Fall, Spring"}, {"courseID":"2222","title":"Java 1","description":"Intro to Java Programming","credits":4,"term":"Spring"}, {"courseID":"3333","title":"Adv PHP 201","description":"Advanced PHP Programming","credits":3,"term":"Fall"}, {"courseID":"4444","title":"Angular 1","description":"Intro to Angular","credits":3,"term":"Fall, Spring"}, {"courseID":"5555","title":"Java 2","description":"Advanced Java Programming","credits":4,"term":"Fall"}]
+""" courseData = [{"courseID":"1111","title":"PHP 101","description":"Intro to PHP","credits":3,"term":"Fall, Spring"}, {"courseID":"2222","title":"Java 1","description":"Intro to Java Programming","credits":4,"term":"Spring"}, {"courseID":"3333","title":"Adv PHP 201","description":"Advanced PHP Programming","credits":3,"term":"Fall"}, {"courseID":"4444","title":"Angular 1","description":"Intro to Angular","credits":3,"term":"Fall, Spring"}, {"courseID":"5555","title":"Java 2","description":"Advanced Java Programming","credits":4,"term":"Fall"}] """
 
 
 
@@ -36,8 +36,15 @@ def login():
 
 @app.route('/courses/')      #added second forward slash to pattern v1.49a
 @app.route('/courses/<term>')
-def courses(term="Fall 2019"):
-    return render_template("courses.html", courseData = courseData, courses = True, term = term)
+def courses(term = None):
+
+    if term is None:
+        term = "Spring 2019"
+
+    # classes = Course.objects.all()
+    classes = Course.objects.order_by("+courseID")     #change + to - for revers sort
+
+    return render_template("courses.html", courseData = classes, courses = True, term = term)
 
 # Registration route
 
