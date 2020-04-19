@@ -174,7 +174,8 @@
         Update coures enrollment function
         Updateing the enrollment template to show list of courses
 
-
+# 3.5
+        Create MongoDB Aggregation pipeline
         Perform join queries on mult objects using $aggregate        
         Aggregation Pipeline Stage
                 * $lookup: Performs left outer join
