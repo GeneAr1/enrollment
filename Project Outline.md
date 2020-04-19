@@ -170,17 +170,18 @@
 # 3.4
         Create the enrollment Page
         Enrollment proccess
-        Perform join queries on mult objects using $aggregate
+# 3.4a      
+        Update coures enrollment function
+        Updateing the enrollment template to show list of courses
 
 
-        
+        Perform join queries on mult objects using $aggregate        
         Aggregation Pipeline Stage
                 * $lookup: Performs left outer join
                 * $match : Filters documents
                 * $unwind: Deconstructs an array field
         
-        Update coures enrollment function
-        Updateing the enrollment template to show list of courses
+
         
 
 
