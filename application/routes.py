@@ -25,8 +25,8 @@ def login():
 
         user = User.objects(email=email).first()
 
-        # if user and password == user.get_password(password):    iell not work because of hashed use for later
-        if user and password == user.password:
+        if user and password == user.get_password(password):    #will not work because of hashed use for later
+        #if user and password == user.password:
             flash(f"{user.first_name}, You have successfully logged in!", "success")
             return redirect('/index')
         else:
@@ -82,13 +82,30 @@ def register():
     # to form from args so POST will recieve data
 @app.route('/enrollment', methods=["GET", "POST"])
 def enrollment():
-    course = request.form.get('courseID')
-    title = request.form.get('title')
+    courseID = request.form.get('courseID')
+    courseTitle = request.form.get('title')
+    user_id = 1      #for testing in future will be session varialbe v3.4
+
+    if courseID:        #check if coming from enrollment page ID will be present in form 
+        if Enrollment.objects(user_id=user_id, courseID=courseID):
+            flash(f"Error, you are already registered for this course {courseID}!", "danger")
+            return redirect(url_for("courses"))
+        else:
+            Enrollment(user_id=user_id, courseID=courseID)
+            flash(f"You are succesffully enrolled in course {courseTitle} {courseID}!", "success")
+
+    classes = None
+
+
     term = request.form.get('term')
-    return render_template("enrollment.html", enrollment = True, data={"id":course, "title":title, "term":term})
+    #return render_template("enrollment.html", enrollment = True, data={"id":course, "title":title, "term":term})
+    return render_template("enrollment.html", enrollment = True, title="Enrollment", classes=classes)
+
+
+    
 
 # api route return response as a json v1.50 can use response to dump data to whatever needed or create api's
-@app.route("/api/")
+""" @app.route("/api/")
 @app.route("/api/<idx>")
 def api(idx=None):
 
@@ -97,7 +114,7 @@ def api(idx=None):
     else:
         jdata = courseData[int(idx)]
 
-    return Response(json.dumps(jdata), mimetype="application/json")
+    return Response(json.dumps(jdata), mimetype="application/json") """
 
 
 
@@ -105,8 +122,6 @@ def api(idx=None):
 
 @app.route("/user")
 def user():
-    #User(user_id=1, first_name="Bubba", last_name="Redneck", email="bubba@imaredneck.com", password="Trumper16").save()
-    #User(user_id=2, first_name="Cleatus", last_name="Dumbass", email="dumbass@imaredneck.com",password="1majorTrumper").save()
     users = User.objects.all()
     print(users)
     return render_template("user.html", users=users)

@@ -167,6 +167,20 @@
         Create the courses page
                 * change to pull data from model not dict in module
                 * corrected model index in models.py to match DB
+# 3.4
+        Create the enrollment Page
+        Enrollment proccess
+        Perform join queries on mult objects using $aggregate
+
+
+        
+        Aggregation Pipeline Stage
+                * $lookup: Performs left outer join
+                * $match : Filters documents
+                * $unwind: Deconstructs an array field
+        
+        Update coures enrollment function
+        Updateing the enrollment template to show list of courses
         
 
 
