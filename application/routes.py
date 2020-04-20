@@ -1,10 +1,10 @@
 from application import app, db
-from flask import render_template, request, json, Response, redirect, flash, url_for
+from flask import render_template, request, json, Response, redirect, flash, url_for, session
 from application.models import User, Course, Enrollment
 from application.forms import Loginform, RegisterForm
 
 
-
+ 
 """ courseData = [{"courseID":"1111","title":"PHP 101","description":"Intro to PHP","credits":3,"term":"Fall, Spring"}, {"courseID":"2222","title":"Java 1","description":"Intro to Java Programming","credits":4,"term":"Spring"}, {"courseID":"3333","title":"Adv PHP 201","description":"Advanced PHP Programming","credits":3,"term":"Fall"}, {"courseID":"4444","title":"Angular 1","description":"Intro to Angular","credits":3,"term":"Fall, Spring"}, {"courseID":"5555","title":"Java 2","description":"Advanced Java Programming","credits":4,"term":"Fall"}] """
 
 
@@ -17,6 +17,11 @@ def index():
 
 @app.route('/login', methods=['GET','POST'])
 def login():
+
+    #if user already loged in jsut check for username
+    if session.get('username'):
+        return redirect(url_for('index'))
+
     form = Loginform()
 
     if form.validate_on_submit():
@@ -28,6 +33,9 @@ def login():
         if user and password == user.get_password(password):    #will not work because of hashed use for later
         #if user and password == user.password:
             flash(f"{user.first_name}, You have successfully logged in!", "success")
+            session['user_id'] = user.user_id
+            session['username'] = user.first_name
+
             return redirect('/index')
         else:
             flash(f'Sorry, there seems to be a problem', 'danger')
@@ -50,6 +58,11 @@ def courses(term = None):
 
 @app.route('/register', methods=['GET','POST'])
 def register():
+
+    #if user already loged in jsut check for username
+    if session.get('username'):
+        return redirect(url_for('index'))
+
     rform = RegisterForm()
 
     if rform.validate_on_submit():
