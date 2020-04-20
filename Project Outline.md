@@ -167,6 +167,27 @@
         Create the courses page
                 * change to pull data from model not dict in module
                 * corrected model index in models.py to match DB
+# 3.4
+        Create the enrollment Page
+        Enrollment proccess
+# 3.4a      
+        Update coures enrollment function
+        Updateing the enrollment template to show list of courses
+
+# 3.5
+        Create MongoDB Aggregation pipeline
+        Perform join queries on mult objects using $aggregate        
+        Aggregation Pipeline Stage
+                * $lookup: Performs left outer join
+                * $match : Filters documents
+                * $unwind: Deconstructs an array field
+# 3.5a  
+        Update enrollment route to interact with database
+        Intergrate  aggregation pipeline into application 
+
+                        * bug fix add .save()to enrollment to save to database 
+        
+
         
 
 
