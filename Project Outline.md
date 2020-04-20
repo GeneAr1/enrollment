@@ -202,6 +202,8 @@
                 - Could use Flask-Login extension even more secure harder to impement
                 something to look at for later https://flask-login.readthedocs.io/en/latest/
                 # future enhancement
+# 3.61
+        Set up session for enrollment and logout routes
         
    
 

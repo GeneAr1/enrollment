@@ -42,6 +42,17 @@ def login():
 
     return render_template("login.html", title="Login", form=form, login = True)
 
+# Logout route
+
+@app.route('/logout')
+def logout():
+        session['user_id'] = False
+        session.pop('username', None)
+        return redirect(url_for('index'))
+
+
+# Courses Route
+
 @app.route('/courses/')      #added second forward slash to pattern v1.49a
 @app.route('/courses/<term>')
 def courses(term = None):
@@ -95,9 +106,15 @@ def register():
     # to form from args so POST will recieve data
 @app.route('/enrollment', methods=["GET", "POST"])
 def enrollment():
+
+    #if user already loged in jsut check for username
+    if not session.get('username'):
+        return redirect(url_for('index'))
+
     courseID = request.form.get('courseID')
     courseTitle = request.form.get('title')
-    user_id = 1      #for testing in future will be session varialbe v3.4
+    # user_id = 1      #for testing in future will be session varialbe v3.4
+    user_id = session.get('user_id')
 
     if courseID:        #check if coming from enrollment page ID will be present in form 
         if Enrollment.objects(user_id=user_id, courseID=courseID):
