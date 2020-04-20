@@ -91,7 +91,7 @@ def enrollment():
             flash(f"Error, you are already registered for this course {courseID}!", "danger")
             return redirect(url_for("courses"))
         else:
-            Enrollment(user_id=user_id, courseID=courseID)
+            Enrollment(user_id=user_id, courseID=courseID).save()               # SAVE data to data base
             flash(f"You are succesffully enrolled in course {courseTitle} {courseID}!", "success")
 
     
@@ -134,7 +134,7 @@ def enrollment():
         ]))
 
 
-    term = request.form.get('term')
+    #term = request.form.get('term')                        removed in version not needed anymore.
     #return render_template("enrollment.html", enrollment = True, data={"id":course, "title":title, "term":term})
     return render_template("enrollment.html", enrollment = True, title="Enrollment", classes=classes)
 

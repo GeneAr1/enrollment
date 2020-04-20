@@ -181,6 +181,11 @@
                 * $lookup: Performs left outer join
                 * $match : Filters documents
                 * $unwind: Deconstructs an array field
+# 3.5a  
+        Update enrollment route to interact with database
+        Intergrate  aggregation pipeline into application 
+
+                        * bug fix add .save()to enrollment to save to database 
         
 
         
