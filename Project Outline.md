@@ -185,10 +185,32 @@
         Update enrollment route to interact with database
         Intergrate  aggregation pipeline into application 
 
-                        * bug fix add .save()to enrollment to save to database 
-        
+                #* bug fix add .save()to enrollment to save to database 
+# 3.60  
+        State management and user auth via Flask-Session
+        session object stors info specific to user
+        implemented on top of cookies and cryptographically signed for security
+                
+                * session['key'] = value        set session
+                * session.get('key')            get session
 
-        
+                * session.pop('key', None)      destroying session
+                * session['key']=False          destroying session
+
+#               generate secure secret key cmdline -- py -c "import os; print(os.urandom(16))"
+
+                - Could use Flask-Login extension even more secure harder to impement
+                something to look at for later https://flask-login.readthedocs.io/en/latest/
+                # future enhancement
+# 3.61
+        Set up session for enrollment and logout route       
+# 3.62  
+        Configure the navigation to use sessions
+        test the sessions
+# 3.63
+        Add Welcome Message on Layout Page
+        Modify style sheet main.css to format the Welcome message.
+        Testing the layout
 
 
 
