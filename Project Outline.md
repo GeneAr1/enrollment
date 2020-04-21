@@ -211,6 +211,32 @@
         Add Welcome Message on Layout Page
         Modify style sheet main.css to format the Welcome message.
         Testing the layout
+*****************************************************************************
+#       Creating and test REST APIs 
+
+# 4.00
+        Create REST API
+        Install flask.RESTPlus extension
+        Install Postman for testing API
+        Creat and test REST API CRUD operations using HTTP verbs
+
+                HTTP Verbs and CRUD Ops.
+                * POST   Create  -       Insert Data
+                * GET    Read    -       Fetch Data
+                * PUT    Update  -       Replace Data
+                * Delete Delete  -       Remove Data
+        
+        Flask-Restplus extension adds support for creating REST API's
+                allows multiple endpoints and request validation built in
+
+        Postman is API development enviornment for testin API
+                chrome HTTP client
+
+
+
+        
+
+        
 
 
 
