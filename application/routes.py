@@ -29,11 +29,10 @@ def login():
         password    = form.password.data
 
         user = User.objects(email=email).first()
-        print(email)
-        print(password)
-        print(user)
-        print(user.get_password(password))
-        print(user.get_password(password))
+        #print(password)
+        #print(user)
+        #print(user.get_password(password))
+        #print(user.get_password(password))
 
         if user and user.get_password(password):    #will not work because of hashed use for later
         #if user and password == user.password:

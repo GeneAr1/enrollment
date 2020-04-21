@@ -101,3 +101,11 @@ footer {
     color: red
     ;
 }
+
+.welcome {
+  float:right;
+  position: absolute;  
+  font-size: 25px;
+  right: 6em;
+  top: 2em;
+}

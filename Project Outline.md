@@ -207,6 +207,10 @@
 # 3.62  
         Configure the navigation to use sessions
         test the sessions
+# 3.63
+        Add Welcome Message on Layout Page
+        Modify style sheet main.css to format the Welcome message.
+        Testing the layout
 
 
 
