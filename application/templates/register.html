@@ -3,23 +3,74 @@
     
 {% block content %}
 
-    <h2>New User Registration</h2>
+    <!-- <h2>New User Registration</h2> -->
+    <!-- updated with V3.04 to work wiht WTF form  -->
+    <!-- <h2>{{ title }}</h2> -->
 
     <div class="container">
-        <form name="register" action="register.php" method="get">
-            <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required>
-            <br>
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-            <br>
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-            <br class="clear">
-            <input class="btn-submit" type="submit" name="submit">
+        <form name="register" action="" method="post" novalidate>
+
+            <fieldset class="form-group">
+                <legend>{{title}}</legend>
+
+                {{ rform.hidden_tag() }}
+
+                <p>
+                    {{ rform.email.label}} <br>
+                    {{ rform.email }}
+                    {% for error in rform.email.errors %}
+
+                    <span class="error-message">{{ error }}</span>
+
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ rform.password.label }} <br>
+                    {{ rform.password }}
+                    {% for error in rform.password.errors %}
+
+                    <span class="error-message">{{ error }}</span>
+
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ rform.password_confirm.label }} <br>
+                    {{ rform.password_confirm }}
+                    {% for error in rform.password_confirm.errors %}
+
+                    <span class="error-message">{{ error }}</span>
+
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ rform.first_name.label }} <br>
+                    {{ rform.first_name }}
+                    {% for error in rform.first_name.errors %}
+
+                    <span class="error-message">{{ error }}</span>
+
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ rform.last_name.label}} <br>
+                    {{ rform.last_name }}
+                    {% for error in rform.last_name.errors %}
+
+                    <span class="error-message">{{ error }}</span>
+
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ rform.submit() }}
+                </p>
+
+            </fieldset>
         </form>
-
-
     </div>
 
 {% endblock %}
