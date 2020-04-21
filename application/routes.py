@@ -29,8 +29,13 @@ def login():
         password    = form.password.data
 
         user = User.objects(email=email).first()
+        print(email)
+        print(password)
+        print(user)
+        print(user.get_password(password))
+        print(user.get_password(password))
 
-        if user and password == user.get_password(password):    #will not work because of hashed use for later
+        if user and user.get_password(password):    #will not work because of hashed use for later
         #if user and password == user.password:
             flash(f"{user.first_name}, You have successfully logged in!", "success")
             session['user_id'] = user.user_id
@@ -109,7 +114,7 @@ def enrollment():
 
     #if user already loged in jsut check for username
     if not session.get('username'):
-        return redirect(url_for('index'))
+        return redirect(url_for('login'))
 
     courseID = request.form.get('courseID')
     courseTitle = request.form.get('title')

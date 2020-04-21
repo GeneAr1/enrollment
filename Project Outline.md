@@ -203,11 +203,10 @@
                 something to look at for later https://flask-login.readthedocs.io/en/latest/
                 # future enhancement
 # 3.61
-        Set up session for enrollment and logout routes
-        
-   
-
-        
+        Set up session for enrollment and logout route       
+# 3.62  
+        Configure the navigation to use sessions
+        test the sessions
 
 
 
